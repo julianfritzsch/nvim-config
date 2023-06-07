@@ -54,16 +54,16 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "<", "<gv", opts)
 
 -- Move text up and down
-keymap("v", "∆", ":m .+1<CR>==", opts)
-keymap("v", "˚", ":m .-2<CR>==", opts)
-keymap("v", "p", '"_dP', opts)
+-- keymap("v", "∆", ":m .+1<CR>==", opts)
+-- keymap("v", "˚", ":m .-2<CR>==", opts)
+-- keymap("v", "p", '"_dP', opts)
 
 -- Visual Block --
 -- Move text up and down
-keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
-keymap("x", "<A-j>", ":move '>+1<CR>gv-gv", opts)
-keymap("x", "<A-k>", ":move '<-2<CR>gv-gv", opts)
+-- keymap("x", "J", ":move '>+1<CR>gv-gv", opts)
+-- keymap("x", "K", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "˚", ":move '<-2<CR>gv-gv", opts)
+keymap("x", "∆", ":move '>+1<CR>gv-gv", opts)
 
 -- Terminal --
 -- Better terminal navigation
@@ -82,5 +82,5 @@ keymap("n", "<leader>m", vim.lsp.buf.format, opts)
 -- Renaming
 keymap("n", "<leader>rn", vim.lsp.buf.rename, opts)
 
--- Send cell to REPL and move to new cell
--- keymap("n", "]x", "@a", opts)
+-- Set language to Julia and open output split
+keymap("n", "<leader>jos", ":let g:jukit_shell_cmd='julia' | call jukit#splits#output()<cr>", opts)

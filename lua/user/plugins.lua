@@ -25,6 +25,7 @@ return require("packer").startup(function(use)
 		end,
 	})
 	use("neovim/nvim-lspconfig") -- Configurations for Nvim LSP
+	use("norcalli/nvim-colorizer.lua") -- Show colors
 	use({
 		"hrsh7th/nvim-cmp",
 		requires = {
@@ -73,14 +74,6 @@ return require("packer").startup(function(use)
 		end,
 	})
 
-	-- use({
-	-- 	"iamcco/markdown-preview.nvim",
-	-- 	run = "cd app && npm install",
-	-- 	setup = function()
-	-- 		vim.g.mkdp_filetypes = { "markdown" }
-	-- 	end,
-	-- 	ft = { "markdown" },
-	-- }) -- Render markdown in browser window
 	use({
 		"nvim-tree/nvim-tree.lua",
 		requires = {
@@ -106,6 +99,12 @@ return require("packer").startup(function(use)
 		-- or                            , branch = '0.1.x',
 		requires = { { "nvim-lua/plenary.nvim" } },
 	}) -- Fuzzy finder
+	use({ "JuliaEditorSupport/julia-vim" }) -- Julia support
+	use({
+		"akinsho/toggleterm.nvim",
+		tag = "*",
+	})
+	use({ "akinsho/bufferline.nvim", tag = "*", requires = "nvim-tree/nvim-web-devicons" })
 	-- Automatically set up your configuration after cloning packer.nvim
 	-- Put this at the end after all plugins
 	if packer_bootstrap then

@@ -45,4 +45,4 @@ vim.cmd([[set iskeyword+=-]]) -- - doesn't count as end of word
 vim.cmd([[set colorcolumn=80]]) -- mark the 80th column
 
 vim.cmd([[autocmd Filetype cpp setlocal expandtab tabstop=2 shiftwidth=2 softtabstop=2]]) -- only two spaces for tab in c++
-
+vim.cmd([[autocmd Filetype julia setlocal colorcolumn=92]])
